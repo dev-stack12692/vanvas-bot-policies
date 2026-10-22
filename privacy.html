@@ -1,0 +1,49 @@
+---
+permalink: /privacy
+---
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Vanvas | Privacy Policy</title><meta name="description" content="Vanvas Discord bot privacy policy. Effective 22 October 2026."><style>body{margin:0;background:#fff;color:#251f21;font:16px/1.7 system-ui,sans-serif}main{max-width:760px;margin:auto;padding:28px 24px 64px}nav{display:flex;gap:24px;flex-wrap:wrap;padding:14px 0;border-bottom:1px solid #eae9ea}a{color:#315e52;text-underline-offset:3px}h1{font:400 36px/1.2 Georgia,serif;letter-spacing:-.025em;margin:32px 0 16px}h2,h3{font:400 24px/1.35 Georgia,serif;margin:32px 0 12px}li{margin:12px 0}p,li{overflow-wrap:anywhere}footer{border-top:1px solid #eae9ea;padding-top:24px;margin-top:36px;color:#585254;font-size:14px}strong{font-weight:600}@media(max-width:480px){h1{font-size:30px}main{padding:20px 20px 48px}}</style></head><body><main><div>Vanvas Discord bot</div><nav><a href="{{ site.baseurl }}/privacy">Privacy Policy</a><a href="{{ site.baseurl }}/terms">Terms of Service</a></nav><h1>Privacy Policy</h1>
+<p>Effective date: 22 October 2026. Reviewed against the deployed code and database schema on 22 October 2026. This policy is not legal advice.</p>
+<p><strong>Operator:</strong> Swapnendu Mal, Discord @swapnendu0390<br />
+<strong>Bot application ID:</strong> 1559225083942408192<br />
+<strong>Contact:</strong> @swapnendu0390 on Discord or https://discord.gg/jQFbe5TzGv</p>
+<h3>1. Scope</h3>
+<p>Vanvas provides moderation, security, server management, logging, community features, levels, virtual coins and music on Discord. This policy explains the information processed by those features. Some information is processed automatically when the bot is present; other information depends on commands and settings chosen by server administrators or users.</p>
+<h3>2. Information processed and stored</h3>
+<ul>
+<li><strong>Discord identifiers and profile information:</strong> user, server, channel, role and message IDs; usernames, display names and avatars used to respond to commands and display notices. The bot also uses server membership, roles, permissions and relevant Discord event information.</li>
+<li><strong>Message processing:</strong> messages accessible to the bot are processed for prefix commands, security filters, autoresponders, activity counts and other enabled features. The bot does not keep a general database archive of every message. However, message text can be retained or copied by the features described below.</li>
+<li><strong>Moderation and security records:</strong> member and moderator IDs, case numbers, action, reason, time, warning records and applicable durations; security settings, exemptions and trusted-user lists.</li>
+<li><strong>Logging:</strong> when configured, the bot posts deleted/edited message excerpts, attachment links, member and invite activity, voice joins/leaves/moves, and channel, role and permission changes to Discord log channels. Security logs can include the message that triggered a filter. Access depends on the server's Discord permissions.</li>
+<li><strong>Recent deleted and edited messages:</strong> the bot keeps the latest deleted/edited message per channel in memory, including the author and message text. Moderators can retrieve it through snipe commands for up to 10 minutes. That access limit is not an automatic memory-erasure timer; entries can remain until replaced or the process restarts.</li>
+<li><strong>Tickets and modmail:</strong> ticket metadata includes the opener, server, channel and ticket number. Closing a ticket can produce a transcript of up to 1,000 messages, including authors, times, message text, selected embed text and attachment links, sent to the configured Discord ticket log. Modmail forwards DMs and up to three attachments to a server's staff thread and relays staff replies to the user. Thread-to-user mappings are stored. Closing modmail archives the Discord thread; it does not erase the conversation.</li>
+<li><strong>User-submitted content:</strong> reminders, AFK reasons, suggestions and staff responses, application answers and status, confession text, poll questions/options/votes, and configuration text such as custom commands, autoresponders, welcome messages and named embeds can be stored. Confessions retain the submitter's user ID: they are not anonymous to the operator, and an administrator command can reveal the author. Deleting a posted confession marks its record deleted but does not erase its stored text and author ID.</li>
+<li><strong>Invites:</strong> inviter and invited member IDs, invite code, join time, leave time, rejoin status, counts, bonus adjustments and invite reward settings. Attribution is best-effort and may be unknown.</li>
+<li><strong>Levels, games and virtual economy:</strong> user IDs, XP/levels, message counts, balances, cooldowns, streaks, wins/losses, inventory and related settings. Some records are per server; virtual-coin wallets and some cooldowns are keyed by user ID across servers. Virtual coins are game data, not payment-card information.</li>
+<li><strong>Other feature settings:</strong> role assignments and saved roles, verification, panels, giveaway entries, temporary channels/roles, scheduled messages and optional birthday day/month information.</li>
+<li><strong>Activity analytics:</strong> message counts by server, channel, hour/day and user, plus join/leave totals. These analytics tables store counts, not message content.</li>
+<li><strong>Server-structure backups:</strong> snapshots contain role names, colors, permissions and positions; category/channel names, structure and role permission overrides; and applicable topics, slowmode, NSFW, voice limits and related channel settings. These feature backups do not include member lists or message histories.</li>
+</ul>
+<h3>3. Music and external requests</h3>
+<p>Music requests are resolved using YouTube through yt-dlp. Requested song names or links are sent to the source service; lyric lookups send search terms such as the track and artist to LRCLIB. Audio passes through the hosting server for playback. The current playback path streams audio through memory and a decoder rather than maintaining a permanent music library. Music queue and requester information is held in process memory.</p>
+<p>No active AI or language-model processing was found in the deployed code. The current AI extension does nothing. A legacy AI settings table remains in the database; it was empty when reviewed.</p>
+<h3>4. Storage and access</h3>
+<p>The bot stores feature records in a SQLite database on its Waifly hosting server. It also keeps runtime caches and diagnostic console output. Discord holds the messages, logs, transcripts, attachments and staff threads the bot posts there.</p>
+<p>The operator can access bot storage. Server administrators and people with the relevant Discord permissions can access their server's logs, transcripts and other feature output. Waifly, Discord and music/lyrics services process information needed to provide their services under their own terms and policies. No advertising-data sale or advertiser integration was found in the reviewed bot code. This does not mean that no information is disclosed to service providers or server staff.</p>
+<p>Do not send passwords, payment details or other secrets to the bot. Its free-text features can retain information that users choose to submit.</p>
+<h3>5. Retention</h3>
+<p>There is no single automatic retention period for all bot data.
+- Most persistent feature records remain until removed by an applicable command or manually by the operator. Removing the bot from a server does not automatically erase that server's database records.
+- Message-count and per-user activity analytics older than 60 days are pruned during analytics flushes. Join/leave aggregates do not have the same automatic 60-day deletion in the reviewed code.
+- Server-structure backups retain the newest five snapshots per server. Older snapshots are removed when another backup is saved; admins can also delete saved snapshots.
+- Some temporary records are removed when their task completes or expires, such as delivered reminders and expired temporary-ban records. This does not erase related Discord messages or moderation history.
+- Runtime caches ordinarily disappear on process restart, subject to the snipe caveat above.
+- Discord logs, transcripts and forwarded messages remain until deleted in Discord. Disabling a feature does not automatically remove its previous output.</p>
+<h3>6. Controls, access and deletion requests</h3>
+<p>Server administrators can configure or disable supported features, change log destinations and remove the bot. Some records have feature-specific removal commands, such as birthday removal or backup deletion. There is no unified self-service command to export or erase all personal data.</p>
+<p>Contact @swapnendu0390 or the support server to request access, correction or deletion. Include your Discord user ID and the affected server ID if known, but do not send secrets. Requests require manual review and may require identity or server-authority verification. This policy does not promise a fixed response time or automatic deletion that the software does not implement. For copies in server logs or staff threads, contact that server's administrators as well. Any request remains subject to applicable law.</p>
+<h3>7. Age and updates</h3>
+<p>Use the bot only if you meet Discord's applicable minimum-age requirements. This policy should be reviewed when the bot's data practices change. The published version should state its effective date.</p>
+<h3>8. Contact</h3>
+<p>Discord: @swapnendu0390<br />
+Support server: https://discord.gg/jQFbe5TzGv</p><footer>Vanvas | Effective 22 October 2026</footer></main></body></html>
